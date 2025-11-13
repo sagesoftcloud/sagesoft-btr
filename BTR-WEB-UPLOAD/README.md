@@ -14,7 +14,8 @@ This web application provides document search functionality for the Bureau of Tr
 ```
 BTR-WEB-UPLOAD/
 ├── README.md                    # This file - Project overview
-├── COMPLETE-SETUP-GUIDE.md      # 📋 Comprehensive step-by-step setup guide
+├── COMPLETE-SETUP-GUIDE.md      # 📋 Comprehensive step-by-step setup guide (CLI)
+├── CLICKOPS-SETUP-GUIDE.md      # 🖱️ AWS Console (ClickOps) setup guide - NO CLI!
 ├── QUICK-SETUP-REFERENCE.md     # ⚡ Quick reference and commands cheat sheet
 ├── LOCAL-DEVELOPMENT.md         # 💻 Local development setup guide
 ├── DEPLOYMENT-GUIDE.md          # 🚀 Step-by-step deployment instructions
@@ -28,8 +29,14 @@ BTR-WEB-UPLOAD/
 ## 🚀 Getting Started
 
 ### For Complete Setup (Production)
-**Follow this for full AWS deployment:**
-👉 **[COMPLETE-SETUP-GUIDE.md](COMPLETE-SETUP-GUIDE.md)** - Comprehensive 9-phase setup guide
+
+#### Option 1: ClickOps (Recommended for beginners)
+**Perfect for users who prefer graphical interfaces:**
+👉 **[CLICKOPS-SETUP-GUIDE.md](CLICKOPS-SETUP-GUIDE.md)** - AWS Console setup (NO command line required!)
+
+#### Option 2: CLI Setup (For advanced users)
+**For users comfortable with command line:**
+👉 **[COMPLETE-SETUP-GUIDE.md](COMPLETE-SETUP-GUIDE.md)** - Comprehensive CLI-based setup guide
 
 ### For Quick Reference
 **Use this during setup for commands and troubleshooting:**
