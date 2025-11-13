@@ -1,0 +1,48 @@
+{
+  "name": "bureau-treasury-docs",
+  "version": "1.0.0",
+  "description": "Bureau of Treasury Document Management System",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "@aws-amplify/ui-react": "^6.0.0",
+    "aws-amplify": "^6.0.0",
+    "@aws-sdk/client-s3": "^3.0.0",
+    "@aws-sdk/client-qbusiness": "^3.0.0",
+    "react-router-dom": "^6.8.0",
+    "axios": "^1.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "keywords": [
+    "bureau-of-treasury",
+    "document-management",
+    "aws",
+    "react",
+    "amplify"
+  ],
+  "author": "AWS Solutions Architecture Team",
+  "license": "MIT"
+}
