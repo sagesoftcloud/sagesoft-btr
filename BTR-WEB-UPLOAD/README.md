@@ -14,6 +14,7 @@ This web application provides document search functionality for the Bureau of Tr
 ```
 BTR-WEB-UPLOAD/
 ├── README.md                 # This file
+├── LOCAL-DEVELOPMENT.md      # Local development setup guide
 ├── DEPLOYMENT-GUIDE.md       # Step-by-step deployment instructions
 ├── AWS-SETUP.md             # AWS services configuration
 ├── src/                     # React application source code
@@ -48,6 +49,64 @@ S3 Bucket: treasury-documents/
 2. Follow `DEPLOYMENT-GUIDE.md` to deploy the application
 3. Configure user permissions in IAM Identity Center
 4. Test with sample documents
+
+## Local Development Setup
+
+### Prerequisites
+- Node.js 18+ installed
+- Git installed
+- Code editor (VS Code recommended)
+
+### Running Locally
+```bash
+# 1. Navigate to project folder
+cd BTR-WEB-UPLOAD
+
+# 2. Install dependencies
+npm install
+
+# 3. Start development server
+npm start
+```
+
+The application will open at: **http://localhost:3000**
+
+### Local Testing Credentials
+For local development and testing:
+- **Email**: Any format (e.g., `region1@treasury.gov.ph`, `admin@btr.gov.ph`)
+- **Password**: Any password (e.g., `password123`, `demo123`)
+- **Region**: Automatically detected as "Region 1" for demo
+
+### What You'll See
+1. **AWS Amplify Login** - Demo authentication screen
+2. **Search Interface** - Bureau of Treasury document search
+3. **Mock Data** - Sample treasury documents for testing
+4. **Regional Badge** - Shows "Region 1" by default
+5. **Search Results** - Simulated Q Business responses
+
+### Development Features
+- **Hot Reload** - Changes reflect immediately
+- **Mock Data** - No AWS services needed for testing
+- **Responsive Design** - Test on different screen sizes
+- **Error Handling** - Graceful fallbacks for missing services
+
+### Environment Configuration
+The `.env` file contains:
+```env
+REACT_APP_AWS_REGION=ap-southeast-1
+REACT_APP_S3_BUCKET=treasury-documents
+REACT_APP_QBUSINESS_APP_ID=demo-app-id
+REACT_APP_CLOUDFRONT_DOMAIN=demo.cloudfront.net
+REACT_APP_ENABLE_MOCK_DATA=true
+```
+
+### Troubleshooting Local Development
+- **Port 3000 in use**: The app will prompt to use a different port
+- **Dependencies issues**: Run `npm install` again
+- **Authentication errors**: Check `src/aws-exports.js` exists
+- **Search not working**: Mock data is enabled by default
+
+## Production Deployment
 
 ## Cost Estimation
 - **Monthly Cost**: ~$651 USD
