@@ -13,15 +13,27 @@ This web application provides document search functionality for the Bureau of Tr
 ## Project Structure
 ```
 BTR-WEB-UPLOAD/
-├── README.md                 # This file
-├── LOCAL-DEVELOPMENT.md      # Local development setup guide
-├── DEPLOYMENT-GUIDE.md       # Step-by-step deployment instructions
-├── AWS-SETUP.md             # AWS services configuration
-├── src/                     # React application source code
-├── public/                  # Static assets
-├── amplify/                 # AWS Amplify configuration
-└── docs/                    # Additional documentation
+├── README.md                    # This file - Project overview
+├── COMPLETE-SETUP-GUIDE.md      # 📋 Comprehensive step-by-step setup guide
+├── QUICK-SETUP-REFERENCE.md     # ⚡ Quick reference and commands cheat sheet
+├── LOCAL-DEVELOPMENT.md         # 💻 Local development setup guide
+├── DEPLOYMENT-GUIDE.md          # 🚀 Step-by-step deployment instructions
+├── AWS-SETUP.md                 # ☁️ AWS services configuration
+├── src/                         # React application source code
+├── public/                      # Static assets
+├── amplify/                     # AWS Amplify configuration
+└── docs/                        # Additional documentation
 ```
+
+## 🚀 Getting Started
+
+### For Complete Setup (Production)
+**Follow this for full AWS deployment:**
+👉 **[COMPLETE-SETUP-GUIDE.md](COMPLETE-SETUP-GUIDE.md)** - Comprehensive 9-phase setup guide
+
+### For Quick Reference
+**Use this during setup for commands and troubleshooting:**
+👉 **[QUICK-SETUP-REFERENCE.md](QUICK-SETUP-REFERENCE.md)** - Commands cheat sheet and quick fixes
 
 ## Features
 - **Regional Search Filtering**: Users see only documents from their region
