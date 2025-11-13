@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 const SearchBox = ({ onSearch, loading }) => {
   const [query, setQuery] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
     if (query.trim()) {
       onSearch(query.trim());
     }
-  };
+  }, [query, onSearch]);
 
-  const handleClear = () => {
+  const handleClear = useCallback(() => {
     setQuery('');
-  };
+  }, []);
+
+  const handleInputChange = useCallback((e) => {
+    setQuery(e.target.value);
+  }, []);
 
   return (
     <div className="search-box">
@@ -21,10 +25,11 @@ const SearchBox = ({ onSearch, loading }) => {
           <input
             type="text"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={handleInputChange}
             placeholder="Search treasury documents... (e.g., 'budget allocation', 'financial report', 'Republic Act')"
             className="search-input"
             disabled={loading}
+            aria-label="Search treasury documents"
           />
           {query && (
             <button 
@@ -32,6 +37,7 @@ const SearchBox = ({ onSearch, loading }) => {
               onClick={handleClear}
               className="clear-button"
               disabled={loading}
+              aria-label="Clear search"
             >
               ✕
             </button>
@@ -40,9 +46,10 @@ const SearchBox = ({ onSearch, loading }) => {
             type="submit" 
             className="search-button"
             disabled={loading || !query.trim()}
+            aria-label={loading ? 'Searching...' : 'Search documents'}
           >
             {loading ? (
-              <span className="loading-spinner">⟳</span>
+              <span className="loading-spinner" aria-hidden="true">⟳</span>
             ) : (
               '🔍 Search'
             )}
@@ -62,4 +69,4 @@ const SearchBox = ({ onSearch, loading }) => {
   );
 };
 
-export default SearchBox;
+export default React.memo(SearchBox);

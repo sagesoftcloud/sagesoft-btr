@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import SearchBox from '../components/SearchBox';
 import SearchResults from '../components/SearchResults';
 import { searchDocuments } from '../utils/qbusinessClient';
@@ -8,16 +8,15 @@ const SearchPage = ({ user }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [userRegion, setUserRegion] = useState(null);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    // Get user's region from IAM tags or user attributes
-    const region = getUserRegion(user);
-    setUserRegion(region);
-  }, [user]);
+  // Memoize user region to prevent unnecessary re-renders
+  const userRegion = useMemo(() => getUserRegion(user), [user]);
 
-  const handleSearch = async (query) => {
+  // Memoized search handler to prevent unnecessary re-renders
+  const handleSearch = useCallback(async (query) => {
+    if (!query.trim()) return;
+    
     setLoading(true);
     setSearchQuery(query);
     setError(null);
@@ -38,7 +37,7 @@ const SearchPage = ({ user }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [userRegion]);
 
   return (
     <div className="search-page">
@@ -55,7 +54,7 @@ const SearchPage = ({ user }) => {
         <SearchBox onSearch={handleSearch} loading={loading} />
         
         {error && (
-          <div className="error-message">
+          <div className="error-message" role="alert">
             {error}
           </div>
         )}
